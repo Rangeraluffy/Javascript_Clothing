@@ -105,3 +105,40 @@ function displayHat(hat){
 hats.forEach((hat, i) => {
   displayHat(hat);
 });
+
+// SECOND PART FILTER BY COLOR
+
+// 1.First, write a function highlightSelectedFilter()
+// that will remove the active CSS class from all filter
+
+function highlightSelectedFilter(elem) {
+    const buttons = document.querySelectorAll("#filters button");
+    buttons.forEach((button) => {
+      button.classList.remove("active");
+    });
+  elem.classList.add('active');
+// 3. Bind this function as a click event to each of the filter buttons.
+  filterHatsByColor(elem.textContent);
+}
+
+// 2. It will be necessary to select all hat components
+// that match the color of the filter button that has been clicked.
+
+function filterHatsByColor(color) {
+  var children = Array.from(document.getElementById("products").children);
+    children.forEach((element) => {
+    element.style.display = "none";
+  });
+
+  const colorClass = color.toLowerCase();
+  if (colorClass === "all") {
+    children.forEach((element) => {
+    element.style.display = "inline";
+    });
+  }
+  children.forEach((element) => {
+    if (element.classList.value.includes(colorClass)) {
+        element.style.display = "inline";
+    }
+  });
+}
