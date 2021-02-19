@@ -31,3 +31,22 @@ function hat(name, price, color, imageHref) {
     return `Name: ${this.name}, Price: ${this.price}, Color: ${this.color}, imageHref: ${this.imageHref} `
   }
 }
+
+// 3. Define an array of hat objects using the Hat prototype
+// that represent all of the hats in the static HTML.
+
+let hats = [
+  new Hat('Baseball Cap', '11.99€', 'Color : red', './assets/images/red/hats/1.png'),
+  new Hat('Baseball Cap', '11.99€', 'Color : blue', './assets/images/blue/hats/1.png'),
+  new Hat('Baseball Cap', '11.99€', 'Color : yellow', './assets/images/yellow/hats/1.png'),
+  new Hat('Baseball Cap', '11.99€', 'Color : green', './assets/images/green/hats/1.png'),
+  new Hat('Beanie', '17.99€', 'Color : red', './assets/images/red/hats/2.png'),
+  new Hat('Beanie', '17.99€', 'Color : blue', './assets/images/blue/hats/2.png'),
+  new Hat('Beanie', '17.99€', 'Color : green', './assets/images/green/hats/2.png'),
+  new Hat('Straw hat', '10.99€', 'Color : yellow', './assets/images/yellow/hats/3.png'),
+  new Hat('Straw hat', '10.99€', 'Color : blue', './assets/images/blue/hats/3.png'),
+  new Hat('Tribly', '10.99€', 'Color : red', './assets/images/red/hats/4.png'),
+  new Hat('Tribly', '10.99€', 'Color : blue', './assets/images/blue/hats/4.png'),
+  new Hat('Tribly', '10.99€', 'Color : yellow', './assets/images/yellow/hats/4.png'),
+];
+console.log(hats);
