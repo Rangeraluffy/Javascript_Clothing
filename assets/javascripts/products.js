@@ -54,18 +54,19 @@ console.log(accesories);
 // 4. Define a function displayHat(hat)
 // that will accept a Hat object and create an HTML
 
-function displayHat(hat){
+function displayAccessory(hat) {
 
   let firstDiv = document.createElement('div');
   firstDiv.className = `accessory col-sm-4 ${hat.color}`;
 
+
   let secondDiv = document.createElement('div');
-  secondDiv.className ="card my-3";
+  secondDiv.className = "card my-3";
 
   firstDiv.appendChild(secondDiv);
 
   let divPrice = document.createElement('div');
-  divPrice.className ="currency btn btn-light disabled";
+  divPrice.className = "currency btn btn-light disabled";
   divPrice.innerHTML = hat.price;
 
   secondDiv.appendChild(divPrice);
@@ -78,7 +79,7 @@ function displayHat(hat){
   secondDiv.appendChild(divImg);
 
   let divBodyCard = document.createElement('div');
-  divBodyCard.className ="card-body text-center";
+  divBodyCard.className = "card-body text-center";
 
   secondDiv.appendChild(divBodyCard);
 
@@ -89,21 +90,24 @@ function displayHat(hat){
 
   let divPara = document.createElement('p');
   divPara.className = "card-text";
-  divPara.innerHTML = hat.color;
+  divPara.innerHTML = "Color : " + hat.color;
 
   divBodyCard.appendChild(divPara);
 
   let divButton = document.createElement('button');
   divButton.className = 'btn btn-outline-primary';
   divButton.innerHTML = "Add to wishlist!";
+  divButton.addEventListener('click', () => {
+    addToWishlist(hat);
+    totalCost(hat)
+  })
   divBodyCard.appendChild(divButton);
 
   let productsDiv = document.getElementById('products');
   productsDiv.appendChild(firstDiv);
-
 }
-hats.forEach((hat, i) => {
-  displayHat(hat);
+accesories.forEach((hat, i) => {
+  displayAccessory(hat);
 });
 
 // SECOND PART FILTER BY COLOR
@@ -144,3 +148,43 @@ function filterHatsByColor(color) {
 }
 
 // THIRD PART Socks and sunglasses
+
+// 3. Write a function loadRemoteAccessories().
+// The function will use the textContent of the button that it is bound
+
+function loadRemoteAccessories(button) {
+  console.log(button.textContent);
+  const buttonsAccesories = document.querySelectorAll("#navbarSupportedContent button");
+  buttonsAccesories.forEach((button) => {
+    button.classList.remove("active");
+  });
+  button.classList.add('active');
+  var url;
+  switch (button.textContent) {
+    case 'Hats':
+      url = "https://api.jsonbin.io/b/6025332887173a3d2f5ba7e9/2";
+      break;
+    case 'Socks':
+      url = "https://api.jsonbin.io/b/601c1e6ed5aafc6431a3f80d";
+      break;
+    case 'Sunglasses':
+      url = "https://api.jsonbin.io/b/601e5fbed5aafc6431a4aa14";
+      break;
+    case 'Gloves':
+      url = "https://api.jsonbin.io/b/601e5ff6c033606410a81d95";
+      break;
+  }
+  document.getElementById('products').innerHTML = '';
+
+  fetch(url)
+    .then(function(response) {
+      // button.textContent = 'Hats';
+      return response.json();
+    })
+    .then(function(accessories) {
+
+      accessories.forEach(accessory => {
+        displayAccessory(new Accessory(accessory.name, accessory.price, accessory.color, accessory.imageHref));
+      });
+    });
+}
