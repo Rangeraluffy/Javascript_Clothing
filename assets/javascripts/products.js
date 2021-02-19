@@ -21,14 +21,14 @@ console.log(hat1.toString());
 // that can be used to construct the object from the previous task.
 // Add a function toString()
 
-function hat(name, price, color, imageHref) {
+function Accessory(name, price, color, imageHref) {
   this.name = name;
   this.price = price;
   this.color = color;
   this.imageHref = imageHref;
 
-  this.toString = function(){
-    return `Name: ${this.name}, Price: ${this.price}, Color: ${this.color}, imageHref: ${this.imageHref} `
+  this.toString = function() {
+    return `Name: ${this.name}, Price: ${this.price}, Color: ${this.color}, imageHref: ${this.imageHref}`
   }
 }
 
@@ -142,3 +142,5 @@ function filterHatsByColor(color) {
     }
   });
 }
+
+// THIRD PART Socks and sunglasses
