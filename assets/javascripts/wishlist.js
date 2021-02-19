@@ -53,3 +53,24 @@ function displayCard(accessory, count) {
 
   const products = document.getElementById('products').appendChild(colSm4);
 };
+
+function removeFromWishlist(accessory) {
+  let accessories = JSON.parse(localStorage.getItem('accessories'));
+
+  if (!accessories) {
+    accessories = [];
+  }
+
+  if(accessories[accessory.name + accessory.color]){
+    if(accessories[accessory.name + accessory.color].count > 1){
+      accessories[accessory.name + accessory.color].count --;
+    }
+    else{
+      accessories[accessory.name + accessory.color] = undefined
+    }
+  }
+
+  localStorage.setItem("accessories", JSON.stringify(accessories));
+  loadWishlist();
+}
+loadWishlist()
