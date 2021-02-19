@@ -99,6 +99,7 @@ function displayAccessory(hat) {
   divButton.innerHTML = "Add to wishlist!";
   divButton.addEventListener('click', () => {
     addToWishlist(hat);
+    totalCost(hat)
   })
   divBodyCard.appendChild(divButton);
 
