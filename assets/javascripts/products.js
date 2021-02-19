@@ -35,19 +35,73 @@ function hat(name, price, color, imageHref) {
 // 3. Define an array of hat objects using the Hat prototype
 // that represent all of the hats in the static HTML.
 
-// 3.Définissez un tableau d'objets de chapeau à l'aide du prototype de chapeau qui représentent tous les chapeaux du HTML statique.
-let accesories = [
-  new Accessory('Baseball Cap', '11.99', 'red', './assets/images/red/hats/1.png'),
-  new Accessory('Baseball Cap', '11.99', 'blue', './assets/images/blue/hats/1.png'),
-  new Accessory('Baseball Cap', '11.99', 'yellow', './assets/images/yellow/hats/1.png'),
-  new Accessory('Baseball Cap', '11.99', 'green', './assets/images/green/hats/1.png'),
-  new Accessory('Beanie', '17.99', 'red', './assets/images/red/hats/2.png'),
-  new Accessory('Beanie', '17.99', 'blue', './assets/images/blue/hats/2.png'),
-  new Accessory('Beanie', '17.99', 'green', './assets/images/green/hats/2.png'),
-  new Accessory('Straw hat', '10.99', 'yellow', './assets/images/yellow/hats/3.png'),
-  new Accessory('Straw hat', '10.99', 'blue', './assets/images/blue/hats/3.png'),
-  new Accessory('Tribly', '10.99', 'red', './assets/images/red/hats/4.png'),
-  new Accessory('Tribly', '10.99', 'blue', './assets/images/blue/hats/4.png'),
-  new Accessory('Tribly', '10.99', 'yellow', './assets/images/yellow/hats/4.png'),
+let hats = [
+  new Hat('Baseball Cap', '11.99€', 'Color : red', './assets/images/red/hats/1.png'),
+  new Hat('Baseball Cap', '11.99€', 'Color : blue', './assets/images/blue/hats/1.png'),
+  new Hat('Baseball Cap', '11.99€', 'Color : yellow', './assets/images/yellow/hats/1.png'),
+  new Hat('Baseball Cap', '11.99€', 'Color : green', './assets/images/green/hats/1.png'),
+  new Hat('Beanie', '17.99€', 'Color : red', './assets/images/red/hats/2.png'),
+  new Hat('Beanie', '17.99€', 'Color : blue', './assets/images/blue/hats/2.png'),
+  new Hat('Beanie', '17.99€', 'Color : green', './assets/images/green/hats/2.png'),
+  new Hat('Straw hat', '10.99€', 'Color : yellow', './assets/images/yellow/hats/3.png'),
+  new Hat('Straw hat', '10.99€', 'Color : blue', './assets/images/blue/hats/3.png'),
+  new Hat('Tribly', '10.99€', 'Color : red', './assets/images/red/hats/4.png'),
+  new Hat('Tribly', '10.99€', 'Color : blue', './assets/images/blue/hats/4.png'),
+  new Hat('Tribly', '10.99€', 'Color : yellow', './assets/images/yellow/hats/4.png'),
 ];
-console.log(accesories);
+console.log(hats);
+
+// 4. Define a function displayHat(hat)
+// that will accept a Hat object and create an HTML
+
+function displayHat(hat){
+
+  let firstDiv = document.createElement('div');
+  firstDiv.className = `accessory col-sm-4 ${hat.color}`;
+
+  let secondDiv = document.createElement('div');
+  secondDiv.className ="card my-3";
+
+  firstDiv.appendChild(secondDiv);
+
+  let divPrice = document.createElement('div');
+  divPrice.className ="currency btn btn-light disabled";
+  divPrice.innerHTML = hat.price;
+
+  secondDiv.appendChild(divPrice);
+
+  let divImg = document.createElement('img');
+  divImg.className = "card-img-top";
+  divImg.src = hat.imageHref;
+  divImg.alt = "Image of " + hat.name;
+
+  secondDiv.appendChild(divImg);
+
+  let divBodyCard = document.createElement('div');
+  divBodyCard.className ="card-body text-center";
+
+  secondDiv.appendChild(divBodyCard);
+
+  let divTitle = document.createElement('h5');
+  divTitle.className = "card-title";
+  divTitle.innerHTML = hat.name;
+  divBodyCard.appendChild(divTitle);
+
+  let divPara = document.createElement('p');
+  divPara.className = "card-text";
+  divPara.innerHTML = hat.color;
+
+  divBodyCard.appendChild(divPara);
+
+  let divButton = document.createElement('button');
+  divButton.className = 'btn btn-outline-primary';
+  divButton.innerHTML = "Add to wishlist!";
+  divBodyCard.appendChild(divButton);
+
+  let productsDiv = document.getElementById('products');
+  productsDiv.appendChild(firstDiv);
+
+}
+hats.forEach((hat, i) => {
+  displayHat(hat);
+});
