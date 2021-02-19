@@ -205,5 +205,23 @@ function addToWishlist(accessory) {
     localStorage.setItem('count', 1);
     document.querySelector('.wishlist span').textContent = 1;
   }
+setItems(accessory);
+}
 
+function setItems(accessory) {
+  let accessories = JSON.parse(localStorage.getItem('accessories'));
+
+  if (!accessories) {
+    accessories = {};
+  }
+
+  if(accessories[accessory.name + '' + accessory.color]){
+    accessories[accessory.name + accessory.color].count++;
+  }
+  else {
+    accessories[accessory.name + accessory.color] = {};
+    accessories[accessory.name + accessory.color].item = accessory;
+    accessories[accessory.name + accessory.color].count = 1;
+  }
+  localStorage.setItem("accessories", JSON.stringify(accessories));
 }
