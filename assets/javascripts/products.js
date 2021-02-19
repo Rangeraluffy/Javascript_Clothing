@@ -4,15 +4,15 @@
 // with properties name, price, color, and imageHref.
 
 class Hat {
-  constructor(name, price, color, imageHref){
+  constructor(name, price, color, imageHref) {
     this.name = name,
-    this.price = price,
-    this.color = color,
-    this.imageHref = imageHref
+      this.price = price,
+      this.color = color,
+      this.imageHref = imageHref
   }
   toString() {
-      return `Name: ${this.name}, Price: ${this.price}, Color: ${this.color}, imageHref: ${this.imageHref} `
-    }
+    return `Name: ${this.name}, Price: ${this.price}, Color: ${this.color}, imageHref: ${this.imageHref} `
+  }
 }
 let hat1 = new Hat('Baseball', '11.99€', 'Red', './assets/images/red/hats/1.png');
 console.log(hat1.toString());
@@ -53,6 +53,8 @@ console.log(accesories);
 
 // 4. Define a function displayHat(hat)
 // that will accept a Hat object and create an HTML
+
+// Socks and glasses Rename in Accesory
 
 function displayAccessory(hat) {
 
@@ -116,12 +118,12 @@ accesories.forEach((hat, i) => {
 // that will remove the active CSS class from all filter
 
 function highlightSelectedFilter(elem) {
-    const buttons = document.querySelectorAll("#filters button");
-    buttons.forEach((button) => {
-      button.classList.remove("active");
-    });
+  const buttons = document.querySelectorAll("#filters button");
+  buttons.forEach((button) => {
+    button.classList.remove("active");
+  });
   elem.classList.add('active');
-// 3. Bind this function as a click event to each of the filter buttons.
+  // 3. Bind this function as a click event to each of the filter buttons.
   filterHatsByColor(elem.textContent);
 }
 
@@ -130,19 +132,19 @@ function highlightSelectedFilter(elem) {
 
 function filterHatsByColor(color) {
   var children = Array.from(document.getElementById("products").children);
-    children.forEach((element) => {
+  children.forEach((element) => {
     element.style.display = "none";
   });
 
   const colorClass = color.toLowerCase();
   if (colorClass === "all") {
     children.forEach((element) => {
-    element.style.display = "inline";
+      element.style.display = "inline";
     });
   }
   children.forEach((element) => {
     if (element.classList.value.includes(colorClass)) {
-        element.style.display = "inline";
+      element.style.display = "inline";
     }
   });
 }
@@ -151,6 +153,7 @@ function filterHatsByColor(color) {
 
 // 3. Write a function loadRemoteAccessories().
 // The function will use the textContent of the button that it is bound
+
 
 function loadRemoteAccessories(button) {
   console.log(button.textContent);
@@ -178,7 +181,6 @@ function loadRemoteAccessories(button) {
 
   fetch(url)
     .then(function(response) {
-      // button.textContent = 'Hats';
       return response.json();
     })
     .then(function(accessories) {
@@ -206,7 +208,7 @@ function addToWishlist(accessory) {
     localStorage.setItem('count', 1);
     document.querySelector('.wishlist span').textContent = 1;
   }
-setItems(accessory);
+  setItems(accessory);
 }
 
 function setItems(accessory) {
@@ -216,10 +218,9 @@ function setItems(accessory) {
     accessories = {};
   }
 
-  if(accessories[accessory.name + '' + accessory.color]){
+  if (accessories[accessory.name + '' + accessory.color]) {
     accessories[accessory.name + accessory.color].count++;
-  }
-  else {
+  } else {
     accessories[accessory.name + accessory.color] = {};
     accessories[accessory.name + accessory.color].item = accessory;
     accessories[accessory.name + accessory.color].count = 1;
@@ -227,6 +228,7 @@ function setItems(accessory) {
   localStorage.setItem("accessories", JSON.stringify(accessories));
 }
 
+// A try for me in the local Storage which allows to display the additional price of each product
 function totalCost(accessory) {
   // console.log("The accessory price is", accesories.price);
   // console.log(localStorage.getItem('totalCost'));

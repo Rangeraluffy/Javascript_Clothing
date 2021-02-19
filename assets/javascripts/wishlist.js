@@ -1,15 +1,19 @@
+//  The function loadWishList keep me from having code at the root
+
 function loadWishlist() {
   document.getElementById('products').innerHTML = '';
 
   const accessories = JSON.parse(localStorage.getItem("accessories"));
   if (accessories) {
-    for(const[name, accessory] of Object.entries(accessories)){
-      displayCard(accessory.item,  accessory.count)
+    for (const [name, accessory] of Object.entries(accessories)) {
+      displayWishList(accessory.item, accessory.count)
     }
   }
 }
 
-function displayCard(accessory, count) {
+// Create the card products and replace the static
+
+function displayWishList(accessory, count) {
 
   const colSm4 = document.createElement('div')
   colSm4.className = "col-sm-4";
@@ -54,6 +58,8 @@ function displayCard(accessory, count) {
   const products = document.getElementById('products').appendChild(colSm4);
 };
 
+// Get the local storage the name and the color add the count
+
 function removeFromWishlist(accessory) {
   let accessories = JSON.parse(localStorage.getItem('accessories'));
 
@@ -61,11 +67,10 @@ function removeFromWishlist(accessory) {
     accessories = [];
   }
 
-  if(accessories[accessory.name + accessory.color]){
-    if(accessories[accessory.name + accessory.color].count > 1){
-      accessories[accessory.name + accessory.color].count --;
-    }
-    else{
+  if (accessories[accessory.name + accessory.color]) {
+    if (accessories[accessory.name + accessory.color].count > 1) {
+      accessories[accessory.name + accessory.color].count--;
+    } else {
       accessories[accessory.name + accessory.color] = undefined
     }
   }
