@@ -1,4 +1,4 @@
-// FIRST PART HAT
+// Hat
 
 // 1. Define a simple JavaScript object that represents a hat,
 // with properties name, price, color, and imageHref.
@@ -110,7 +110,7 @@ accesories.forEach((hat, i) => {
   displayAccessory(hat);
 });
 
-// SECOND PART FILTER BY COLOR
+// Filter by color
 
 // 1.First, write a function highlightSelectedFilter()
 // that will remove the active CSS class from all filter
@@ -147,7 +147,7 @@ function filterHatsByColor(color) {
   });
 }
 
-// THIRD PART Socks and sunglasses
+// Socks and sunglasses
 
 // 3. Write a function loadRemoteAccessories().
 // The function will use the textContent of the button that it is bound
@@ -188,3 +188,5 @@ function loadRemoteAccessories(button) {
       });
     });
 }
+
+// Gloves
