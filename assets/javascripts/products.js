@@ -99,7 +99,6 @@ function displayAccessory(hat) {
   divButton.innerHTML = "Add to wishlist!";
   divButton.addEventListener('click', () => {
     addToWishlist(hat);
-    totalCost(hat)
   })
   divBodyCard.appendChild(divButton);
 
@@ -190,3 +189,21 @@ function loadRemoteAccessories(button) {
 }
 
 // The wishList
+
+// 1. Write an empty function addToWishlist(accessory)
+
+function addToWishlist(accessory) {
+
+  let accesoriesNumbers = localStorage.getItem('count');
+
+  accesoriesNumbers = parseInt(accesoriesNumbers);
+
+  if (accesoriesNumbers) {
+    localStorage.setItem('count', accesoriesNumbers + 1);
+    document.querySelector('.wishlist span').textContent = accesoriesNumbers + 1;
+  } else {
+    localStorage.setItem('count', 1);
+    document.querySelector('.wishlist span').textContent = 1;
+  }
+
+}
