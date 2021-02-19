@@ -16,3 +16,18 @@ class Hat {
 }
 let hat1 = new Hat('Baseball', '11.99€', 'Red', './assets/images/red/hats/1.png');
 console.log(hat1.toString());
+
+// 2. Define a JavaScript prototype for a Hat
+// that can be used to construct the object from the previous task.
+// Add a function toString()
+
+function hat(name, price, color, imageHref) {
+  this.name = name;
+  this.price = price;
+  this.color = color;
+  this.imageHref = imageHref;
+
+  this.toString = function(){
+    return `Name: ${this.name}, Price: ${this.price}, Color: ${this.color}, imageHref: ${this.imageHref} `
+  }
+}
