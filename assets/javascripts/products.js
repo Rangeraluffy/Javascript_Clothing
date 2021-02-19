@@ -225,3 +225,17 @@ function setItems(accessory) {
   }
   localStorage.setItem("accessories", JSON.stringify(accessories));
 }
+
+function totalCost(accessory) {
+  // console.log("The accessory price is", accesories.price);
+  // console.log(localStorage.getItem('totalCost'));
+  let cardCost = parseFloat(localStorage.getItem('totalCost'))
+
+  if (!isNaN(cardCost)) {
+
+    localStorage.setItem("totalCost", cardCost + parseFloat(accessory.price));
+  } else {
+    localStorage.setItem("totalCost", parseFloat(accessory.price));
+  }
+  // console.log(localStorage.getItem('totalCost'));
+}
