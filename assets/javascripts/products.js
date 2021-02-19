@@ -189,4 +189,4 @@ function loadRemoteAccessories(button) {
     });
 }
 
-// Gloves
+// The wishList
