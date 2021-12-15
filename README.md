@@ -1,13 +1,24 @@
-# A clothing accessory wishlist
+# Project 1 : Javascript
 
-The project for this course is to enhance two static web pages, using all of the JavaScript techniques that you've learnt throughout the course.  The two pages are for a wishlist on a clothing accessories website.  The aim of the site is to allows visitors to view clothing accessories by category (hats, gloves, socks, and sunglasses), filter by color, and then add up to three items to their own wishlist.  The wishlist can then be viewed, and items can be removed from the wishlist.
+The project for this course is to enhance two static web pages, using all of the JavaScript techniques that you've learnt throughout the course. The two pages are for a wishlist on a clothing accessories website. The aim of the site is to allows visitors to view clothing accessories by category (hats, gloves, socks, and sunglasses), filter by color, and then add up to three items to their own wishlist. The wishlist can then be viewed, and items can be removed from the wishlist.
 
-Currently, the website is just static HTML, CSS, and images; your job is to make these static web pages work dynamically with differen JavaScript techniques.  The static website, which is the project starting point, is attached to the resources tab of this unit.  Download the zip file containing the different HTML and CSS assets, store them all in an appropriate folder for you to work on and have a look at what the two files HTML files look like in Firefox.
+Currently, the website is static HTML, CSS, and images; your job is to make these static web pages work dynamically with different JavaScript techniques. The static website, which is the project starting point, is attached to the resources tab of this unit. Download the zip file containing the different HTML and CSS assets, store them all in an appropriate folder for you to work on and have a look at what the two HTML files look like in Firefox.
 
-The zip file includes an initial git repository; ensure that the repository is set up correctly by running `git status` in the terminal before starting on the project work.  If the repository does not exist, set it up using `git init`.
+## Project aims
 
-_It is important to regularly commit the changes that you make in your project using git._  Proof of your git commit history is a required part of your project submission.
+The project must demonstrate the following aspects of the JavaScript programming language taught in this course:
 
-Once you have downloaded the files, looked through the HTML and checked the git repository, work through the following tasks to demonstrate the JavaScript techniques that you've learnt.  They don't have to be completed in the order that they are listed, although they are listed in an order that should get progressively more challenging.
+  * Using arrays, loops and conditionals.
+  * Using ES6 syntax and constructs.
+  * Declaring objects and defining prototypes.
+  * Defining functions and binding functions to events.
+  * Adding, deleting and moving elements in the DOM.
+  * Altering contents of an element in the DOM.
+  * Retrieving data via AJAX and defining data structures with JSON.
+  * Using JSON Strings (serialized JSON) in local storage.
+  * Appropriate error handling.
+  * Modular definition and organization of functions.
 
-_Don't forget that `console.log` can be used to output information in any functions you write.  `console.log` can be very useful to help to identify why something isn't working in your JavaScript code._
+## HTML and CSS
+
+The project does not carry any marks for use of HTML and CSS beyond the HTML changes that are mentioned in the tasks above. If you feel the need to adjust an HTML or CSS in order to demonstrate your JavaScript skills fully, then make these changes but note that these changes to HTML and CSS will not gain extra marks. Also, any such changes must not negatively impact the visual layout and functions of the web pages.
