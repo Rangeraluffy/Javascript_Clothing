@@ -1,4 +1,4 @@
-# Project 1 : Javascript
+# Project 2 : Javascript
 
 The project for this course is to enhance two static web pages, using all of the JavaScript techniques that you've learnt throughout the course. The two pages are for a wishlist on a clothing accessories website. The aim of the site is to allows visitors to view clothing accessories by category (hats, gloves, socks, and sunglasses), filter by color, and then add up to three items to their own wishlist. The wishlist can then be viewed, and items can be removed from the wishlist.
 
